@@ -92,22 +92,68 @@ header nav i{
 }
 
 #divGame{
+    position: relative;
     background-color: var(--black);
     border-radius: 1rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     gap: 1rem;
     margin: 2rem auto;
+    overflow: hidden;
+}
+#divGame div{
+    position: absolute;
+    background-color: var(--white);
 }
 
+#gameOptions{
+    width: 80%;
+    max-width: 350px;
+    margin: auto;
+    border: 2px solid var(--black);
+    border-radius: 2rem;
+}
+#gameOptions button{
+    color: yellow;
+    background-color: var(--black);
+    font-size: 1.5em;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    margin: 1rem 0;
+}
+#gameContainer,.pointsp1,.pointsp2{
+    display: none;
+}
+.game{
+    width: calc(100% + 2px);
+    background-color: var(--black);
+    color: yellow;
+    font-size: 3em;
+    padding: 1rem 0;
+    border-radius: 2rem 2rem 0 0;
+}
+.gamemode,.gamedificulty{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem 0;
+}
+.gamedificulty div{
+    font-size: 1.5em;
+}
+
+
+
+
+
 footer{
-    position: fixed;
-    bottom: 0;
     width: 100%;
     background-color: var(--black);
     padding: 0.5rem 1rem;
     margin: auto;
+}
+footer.active{
+    position: fixed;
+    bottom: 0;
 }
 footer p{
     font-size: 1.2em;
@@ -123,15 +169,15 @@ footer a{
 
 @media (orientation:portrait) {
     #divGame{
-        width: 90vw;
-        height: 90vw;
+        width: 95vw;
+        height: 95vw;
     }
 }
 
 @media (orientation:landscape) {
     #divGame{
-        width: 90vh;
-        height: 90vh;
+        width: 95vh;
+        height: 95vh;
     }
 }
 

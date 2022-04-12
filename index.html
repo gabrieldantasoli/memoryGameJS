@@ -27,28 +27,43 @@
     <div id="gameOptions">
         <div class="game">Gamemode</div>
         <div class="gamemode">
-            <input type="radio" name="gamemode" id="multiplayer">
-            <label for="multiplayer">Multiplayer</label>
-            <input type="radio" name="gamemode" id="singleplayer">
-            <label for="singlePlayer">SinglePlayer</label>
+            <div>
+                <input type="radio" name="gamemode" id="multiplayer">
+                <label for="multiplayer">Multiplayer</label>
+            </div>
+            <div>
+                <input type="radio" name="gamemode" id="singleplayer">
+                <label for="singleplayer">SinglePlayer</label>
+            </div>
         </div>
         <div class="gamedificulty">
-            <input type="radio" name="difilcuty" id="eight">
-            <label for="eight">8</label>
-            <input type="radio" name="difilcuty" id="sixteen">
-            <label for="sixteen">16</label>
-            <input type="radio" name="difilcuty" id="thirdytwo">
-            <label for="thirdytwo">32</label>
-            <input type="radio" name="difilcuty" id="sixtyfor">
-            <label for="sixtyfor">64</label>
-            <input type="radio" name="difilcuty" id="hundread">
-            <label for="hundread">128</label>
+            <div>
+                <input type="radio" name="difilcuty" id="nine" data-number="9">
+                <label for="eight">9</label>
+            </div>
+            <div>
+                <input type="radio" name="difilcuty" id="sixteen" data-number="16">
+                <label for="sixteen">16</label>
+            </div>
+            <div>
+                <input type="radio" name="difilcuty" id="thirdysix" data-number="36">
+                <label for="thirdysix">36</label>  
+            </div>
+            <div>
+                <input type="radio" name="difilcuty" id="sixtyfor" data-number="64">
+                <label for="sixtyfor">64</label>
+            </div>
+            <div>
+                <input type="radio" name="difilcuty" id="hundread" data-number="100">
+                <label for="hundread">100</label>
+            </div>
+            
         </div>
-        <button>Start</button>
+        <button id="start">Start</button>
     </div>
 
-    <!--<div id="gameContainerSimgle">
-        <div class="points">
+    <div id="gameContainer">
+        <div class="points pointsp1">
             <div>
                 <div><h2 class="title">points</h2></div>
                 <div>
@@ -61,7 +76,7 @@
                 </div>
             </div>
         </div>
-        <div class="points">
+        <div class="points pointsp2">
             <div>
                 <div><h2 class="title">points</h2></div>
                 <div>
@@ -73,12 +88,15 @@
             </div>
         </div>
         <div id="divGame">
-
+            
         </div>
-    </div>-->
+    </div>
 
-    <footer>
+    <footer class="active">
         <p>Devaloped by <a href="https://github.com/gabrieldantasoli" target="_blank" rel="nofollow">gabrieldantasoli</a></p>
     </footer>
+
+
+    <script src="script.js"></script>
 </body>
 </html>

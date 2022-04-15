@@ -1,4 +1,8 @@
 var cards = [] ;
+var actives ;
+var Pointsp1 = 0 ;
+var Pointsp2 = 0 ;
+var time = 0 ;
 
 var start = document.querySelector('#start') ;
 start.addEventListener('click',checkCanStart) ;
@@ -67,6 +71,60 @@ function startGame() {
     for (let p = 0; p<divs.length;p++) {
         divs[p].textContent = cards[p]['number']
     } ;
+    divs.forEach(item => item.addEventListener('click',(e) => {
+        document.querySelectorAll('#divGame div')[e.target.getAttribute('data-number') - 1].classList.add('active') ;
+        actives = document.querySelectorAll('#divGame div.active') ;
+        if (actives.length == 2) {
+            document.querySelector('#divGame').style.pointerEvents = 'none' ;
+            if (actives[0].textContent == actives[1].textContent) {
+                setTimeout(() => {
+                    actives.forEach(item => item.remove()) ;
+                    let newDivs = document.querySelectorAll('#divGame div') ;
+                    if (newDivs.length == 0) {
+                        setTimeout(() => {
+                            document.querySelector('.refresh').style.display = 'flex' ;
+                            document.querySelector('.fa-arrows-rotate').addEventListener('click',() => {
+                                window.location.href = 'index.html' ;
+                            }) ;
+                        },1500) ;
+                    }
+                    for (let index = 0; index < newDivs.length; index++) {
+                        newDivs[index].setAttribute('data-number',index + 1) ;
+                    } ;
+                    if (gameMode == 'multiplayer') {
+                        if (time % 2 == 0) {
+                            Pointsp1 += 1 ;
+                            document.querySelector('#pointsPlayer1').textContent = Pointsp1 ;
+                        }else {
+                            Pointsp2 += 1 ;
+                            document.querySelector('#pointsPlayer2').textContent = Pointsp2 ;
+                        } ;
+                    }else{
+                        Pointsp1 += 1 ;
+                        document.querySelector('#pointsPlayerSimgle').textContent = Pointsp1 ;
+                    } ;
+                    
+                    document.querySelector('#divGame').style.pointerEvents = 'auto' ;
+                },500) ;
+            }else{
+                setTimeout(removeActives,500) ;
+                time += 1 ;
+                if (time % 2 == 0){
+                document.querySelector('#p1').style.color = 'red' ;
+                document.querySelector('#p2').style.color = 'white' ;
+                }else{
+                    document.querySelector('#p2').style.color = 'red' ;
+                    document.querySelector('#p1').style.color = 'white' ;
+                } ;
+            } ;
+            
+        } ;
+    })) ;
+} ;
+
+function removeActives() {
+    actives.forEach(item => item.classList.remove('active')) ;
+    document.querySelector('#divGame').style.pointerEvents = 'auto' ;
 } ;
 
 function setCards() {
@@ -75,7 +133,6 @@ function setCards() {
         list.push(index) ;
         list.push(index) ;
     } ;
-    console.log(list)
     for (let index = 0; index < gameDificulty; index++){
         cards[index] = {number: null,'status': 1} ;
         while (true) {
@@ -88,3 +145,4 @@ function setCards() {
         } ;
     } ;
 } ;
+

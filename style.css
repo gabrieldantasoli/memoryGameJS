@@ -90,6 +90,9 @@ header nav i{
     font-size: 2.5em;
     color: rgb(255, 247, 0);
 }
+#p1{
+    color: red;
+}
 
 #divGame{
     position: relative;
@@ -108,14 +111,34 @@ header nav i{
     background-repeat: no-repeat;
     background-size: 100%;
     font-weight: 800;
-    font-size: 5em;
+    font-size: 3em;
     line-height: 100%;
     color: transparent;
     transition: 0.7s;
 }
-#divGame div:hover{
+#divGame div.active{
     background-image: url();
     color: #000;
+}
+.refresh{
+    position: fixed;
+    top: 0;left: 0;
+    bottom: 0;right: 0;
+    background-color: rgba(0,0,0,0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.refresh h2{
+    font-size: 2em;
+    text-transform: capitalize;
+    color: white;
+}
+.refresh i{
+    font-size: 5em;
+    margin: 1rem;
+    color: white;
 }
 
 #gameOptions{
@@ -154,6 +177,7 @@ header nav i{
 .gamedificulty div{
     font-size: 1.5em;
 }
+
 
 
 

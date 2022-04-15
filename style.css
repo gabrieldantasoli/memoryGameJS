@@ -94,14 +94,27 @@ header nav i{
 #divGame{
     position: relative;
     background-color: var(--black);
-    border-radius: 1rem;
     gap: 1rem;
     margin: 2rem auto;
-    overflow: hidden;
 }
 #divGame div{
     position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: var(--white);
+    background-image: url(js.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    font-weight: 800;
+    font-size: 6em;
+    color: transparent;
+    transition: 0.7s;
+}
+#divGame div:hover{
+    background-image: url();
+    color: #000;
 }
 
 #gameOptions{
@@ -187,5 +200,8 @@ footer a{
     }
     .points{
         width: 80%;
+    }
+    #divGame div{
+        font-size: 4em;
     }
 }

@@ -108,7 +108,8 @@ header nav i{
     background-repeat: no-repeat;
     background-size: 100%;
     font-weight: 800;
-    font-size: 6em;
+    font-size: 5em;
+    line-height: 100%;
     color: transparent;
     transition: 0.7s;
 }
@@ -194,6 +195,12 @@ footer a{
     }
 }
 
+@media (max-width:500px) {
+    #divGame div{
+        font-size: 3em;
+    }
+}
+
 @media (max-width:420px) {
     header{
         padding: 10px 3%;
@@ -202,6 +209,6 @@ footer a{
         width: 80%;
     }
     #divGame div{
-        font-size: 4em;
+        font-size: 2em;
     }
 }
